@@ -7,11 +7,12 @@ router.get("/", function(req, res, next) {
 });
 
 function sendEmail(htmlData, email) {
+  console.log(process.env.mail_user, process.env.mail_pass);
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "smartrefinance01@gmail.com",
-      pass: "refinance01"
+      user: process.env.mail_user,
+      pass: process.env.mail_pass
     }
   });
   transporter.verify(function(error, success) {
@@ -24,8 +25,8 @@ function sendEmail(htmlData, email) {
   var mainOptions = {
     from: email,
     replyTo: email,
-    to: "warrior2110@outlook.com",
-    subject: "TEST",
+    to: process.env.mail_user,
+    subject: "User send data to you",
     text: `We're hoping meet you soon...`,
     html: htmlData
   };
@@ -42,7 +43,6 @@ router.post("/submitMortgage", function(req, res, next) {
   var formData = req.body;
   let htmlData = "";
   for (let each in formData) {
-    console.log(each);
     htmlData +=
       "<div style = 'margin:10px;padding:10px;font-size:16px'>" +
       each +

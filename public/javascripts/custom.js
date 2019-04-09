@@ -56,8 +56,8 @@ function submitForm() {
   postData["lastname"] = $("#lastname").val();
   postData["email"] = $("#email").val();
   postData["phone"] = $("#phone").val();
-  console.log(postData);
-  fetch("http://localhost:3000/submitMortgage", {
+  //console.log(postData);
+  fetch("submitMortgage", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,6 +69,7 @@ function submitForm() {
       return resp.json();
     })
     .then(function(data) {
-      console.log(data);
+      alert("Success!!!");
+      location.reload();
     });
 }
