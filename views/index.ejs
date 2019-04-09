@@ -1,11 +1,532 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mortgage</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
+    <link href="stylesheets/custom.css" rel="stylesheet"></link>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class = "right_main">
+        <h6 class = "licence_number">
+            Mortgage License Number: 13092
+        </h6>
+        <div class = "left_txt">
+            <p>
+                Toll Free: 1-877-416-0417
+                <span>&nbsp;</span>
+                Local: 1-877-416-0417
+            </p>
+            <div class = "mortgage_outer">
+                <div class = "mortgage_blk">
+                    <div class = "logo_outer">
+                        <div class = "bg_icon">
+                            &nbsp;
+                        </div>
+                        <div class = "logo">
+                            <a href = "#">
+                                <img src = "images/logo.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>
+                        <span>Fixed Rates as low as</span>
+                        <b>3.25 / 3.44% APR*</b>
+                        Loan Offers Delivered Directly to You
+                    </h3>
+                    <div class = "loan_form fullwidth">
+                        <div name = "myForm" id = "mortgage_form">
+                            <div class = "fcenter show">
+                                <h4>CLICK HOME REFINANCE BUTTON<br/>BELOW TO START</h4>
+                                <div class = "radio_btn">
+                                    <label>
+                                        <input name = "loan_type" type = "radio" value = "home_refinance" onclick = "nextPrev(1)" autocomplete="off"/>
+                                        <span>Home Refinance</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class = "fcenter hide">
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="credit_rating" value="Excellent (740+)" onclick="nextPrev(1)">
+                                        <span>Excellent (740+)</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="credit_rating" value="Very Good (680-740)" onclick="nextPrev(1)">
+                                        <span>Very Good (680-740)</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="credit_rating" value="Fair (580-620)" class="btn1" onclick="nextPrev(1)">
+                                        <span>Fair (580-620)</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="credit_rating" value="Poor (580-)" class="btn1" onclick="nextPrev(1)">
+                                        <span>Poor (580-)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class = "fcenter hide">
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="property_type" value="Single Family" class="btn1" onclick="nextPrev(1)">
+                                        <span>Single Family</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="property_type" value="Multi Family" class="btn1" onclick="nextPrev(1)">
+                                        <span>Multi Family</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="property_type" value="Condominium/Townhome" class="btn1" onclick="nextPrev(1)">
+                                        <span>Condominium/Townhome</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="property_type" value="Co-Op" class="btn1" onclick="nextPrev(1)">
+                                        <span>Co-Op</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label><input type="radio" name="property_type" value="Mobile/Manufactured Home" class="btn1" onclick="nextPrev(1)">
+                                        <span>Mobile/Manufactured Home</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class = "fcenter hide">
+                                <h4>ESTIMATE HOME VALUE</h4>
+                                <select name = "estimate_homevalue" id = "estimate_homevalue" class = "input11">
+                                    <option value="-$40000">Less then $40,000</option>
+                                    <option value="$40000-$50000">$40,000 - $50,000</option>
+                                    <option value="$50000-$60000">$50,000 - $60,000</option>
+                                    <option value="$60000-$70000">$60,000 - $70,000</option>
+                                    <option value="$70000-$80000">$70,000 - $80,000</option>
+                                    <option value="$80000-$90000">$80,000 - $90,000</option>
+                                    <option value="$90001-$100000">$90,001 - $100,000</option>
+                                    <option value="$100001-$110000">$100,001 - $110,000</option>
+                                    <option value="$110001-$120000">$110,001 - $120,000</option>
+                                    <option value="$120001-$130000">$120,001 - $130,000</option>
+                                    <option value="$130001-$140000">$130,001 - $140,000</option>
+                                    <option value="$140001-$150000">$140,001 - $150,000</option>
+                                    <option value="$150001-$160000">$150,001 - $160,000</option>
+                                    <option value="$160001-$170000">$160,001 - $170,000</option>
+                                    <option value="$170001-$180000">$170,001 - $180,000</option>
+                                    <option value="$180001-$190000">$180,001 - $190,000</option>
+                                    <option value="$190001-$200000">$190,001 - $200,000</option>
+                                    <option value="$200001-$210000">$200,001 - $210,000</option>
+                                    <option value="$210001-$220000">$210,001 - $220,000</option>
+                                    <option value="$220001-$230000">$220,001 - $230,000</option>
+                                    <option value="$230001-$240000">$230,001 - $240,000</option>
+                                    <option value="$240001-$250000">$240,001 - $250,000</option>
+                                    <option value="$250001-$260000">$250,001 - $260,000</option>
+                                    <option value="$260001-$270000">$260,001 - $270,000</option>
+                                    <option value="$270001-$280000">$270,001 - $280,000</option>
+                                    <option value="$280001-$290000">$280,001 - $290,000</option>
+                                    <option value="$290001-$300000">$290,001 - $300,000</option>
+                                    <option value="$300001-$310000">$300,001 - $310,000</option>
+                                    <option value="$310001-$320000">$310,001 - $320,000</option>
+                                    <option value="$320001-$330000">$320,001 - $330,000</option>
+                                    <option value="$330001-$340000">$330,001 - $340,000</option>
+                                    <option value="$340001-$350000">$340,001 - $350,000</option>
+                                    <option value="$350001-$360000">$350,001 - $360,000</option>
+                                    <option value="$360001-$370000">$360,001 - $370,000</option>
+                                    <option value="$370001-$380000">$370,001 - $380,000</option>
+                                    <option value="$380001-$390000">$380,001 - $390,000</option>
+                                    <option value="$390001-$400000">$390,001 - $400,000</option>
+                                    <option value="$400001-$410000">$400,001 - $410,000</option>
+                                    <option value="$410001-$420000">$410,001 - $420,000</option>
+                                    <option value="$420001-$430000">$420,001 - $430,000</option>
+                                    <option value="$430001-$440000">$430,001 - $440,000</option>
+                                    <option value="$440001-$450000">$440,001 - $450,000</option>
+                                    <option value="$450001-$460000">$450,001 - $460,000</option>
+                                    <option value="$460001-$470000">$460,001 - $470,000</option>
+                                    <option value="$470001-$480000">$470,001 - $480,000</option>
+                                    <option value="$480001-$490000">$480,001 - $490,000</option>
+                                    <option value="$490001-$500000">$490,001 - $500,000</option>
+                                    <option value="$500001-$510000">$500,001 - $510,000</option>
+                                    <option value="$510001-$520000">$510,001 - $520,000</option>
+                                    <option value="$520001-$530000">$520,001 - $530,000</option>
+                                    <option value="$530001-$540000">$530,001 - $540,000</option>
+                                    <option value="$540001-$550000">$540,001 - $550,000</option>
+                                    <option value="$550001-$560000">$550,001 - $560,000</option>
+                                    <option value="$560001-$570000">$560,001 - $570,000</option>
+                                    <option value="$570001-$580000">$570,001 - $580,000</option>
+                                    <option value="$580001-$590000">$580,001 - $590,000</option>
+                                    <option value="$590001-$600000">$590,001 - $600,000</option>
+                                    <option value="$600001-$610000">$600,001 - $610,000</option>
+                                    <option value="$610001-$620000">$610,001 - $620,000</option>
+                                    <option value="$620001-$630000">$620,001 - $630,000</option>
+                                    <option value="$630001-$640000">$630,001 - $640,000</option>
+                                    <option value="$640001-$650000">$640,001 - $650,000</option>
+                                    <option value="$650001-$660000">$650,001 - $660,000</option>
+                                    <option value="$660001-$670000">$660,001 - $670,000</option>
+                                    <option value="$670001-$680000">$670,001 - $680,000</option>
+                                    <option value="$680001-$690000">$680,001 - $690,000</option>
+                                    <option value="$690001-$700000">$690,001 - $700,000</option>
+                                    <option value="$700001-$710000">$700,001 - $710,000</option>
+                                    <option value="$710001-$720000">$710,001 - $720,000</option>
+                                    <option value="$720001-$730000">$720,001 - $730,000</option>
+                                    <option value="$730001-$740000">$730,001 - $740,000</option>
+                                    <option value="$740001-$750000">$740,001 - $750,000</option>
+                                    <option value="$750001-$760000">$750,001 - $760,000</option>
+                                    <option value="$760001-$770000">$760,001 - $770,000</option>
+                                    <option value="$770001-$780000">$770,001 - $780,000</option>
+                                    <option value="$780001-$790000">$780,001 - $790,000</option>
+                                    <option value="$790001-$800000">$790,001 - $800,000</option>
+                                    <option value="$800001-$810000">$800,001 - $810,000</option>
+                                    <option value="$810001-$820000">$810,001 - $820,000</option>
+                                    <option value="$820001-$830000">$820,001 - $830,000</option>
+                                    <option value="$830001-$840000">$830,001 - $840,000</option>
+                                    <option value="$840001-$850000">$840,001 - $850,000</option>
+                                    <option value="$850001-$860000">$850,001 - $860,000</option>
+                                    <option value="$860001-$870000">$860,001 - $870,000</option>
+                                    <option value="$870001-$880000">$870,001 - $880,000</option>
+                                    <option value="$880001-$890000">$880,001 - $890,000</option>
+                                    <option value="$890001-$900000">$890,001 - $900,000</option>
+                                    <option value="$900001-$910000">$900,001 - $910,000</option>
+                                    <option value="$910001-$920000">$910,001 - $920,000</option>
+                                    <option value="$920001-$930000">$920,001 - $930,000</option>
+                                    <option value="$930001-$940000">$930,001 - $940,000</option>
+                                    <option value="$940001-$950000">$940,001 - $950,000</option>
+                                    <option value="$950001-$960000">$950,001 - $960,000</option>
+                                    <option value="$960001-$970000">$960,001 - $970,000</option>
+                                    <option value="$970001-$980000">$970,001 - $980,000</option>
+                                    <option value="$980001-$990000">$980,001 - $990,000</option>
+                                    <option value="$990001-$100000">$990,001 - $1000,000</option>
+                                    <option value="$1000001-$110000">$1000,001 - $1100,000</option>
+                                    <option value="$1,200,000+">$1,200,000+</option>
+                                </select>
+                                <div class = "btn_container">
+                                    <button type = "button" id = "nextBtn" class = "btn1" onclick = "nextPrev(1)">Continue</button>
+                                </div>
+                            </div>
+                            <div class = "fcenter hide">
+                                <h4>Total Mortgage Balance</h4>
+                                <select name = "mortgage_balance" id = "mortgage_balance" class = "input11">
+                                    <option value="-$80000">Less then $80,000</option>
+                                    <option value="$80000-$90000">$80,000 - $90,000</option>
+                                    <option value="$90001-$100000">$90,001 - $100,000</option>
+                                    <option value="$100001-$110000">$100,001 - $110,000</option>
+                                    <option value="$110001-$120000">$110,001 - $120,000</option>
+                                    <option value="$120001-$130000">$120,001 - $130,000</option>
+                                    <option value="$130001-$140000">$130,001 - $140,000</option>
+                                    <option value="$140001-$150000">$140,001 - $150,000</option>
+                                    <option value="$150001-$160000">$150,001 - $160,000</option>
+                                    <option value="$160001-$170000">$160,001 - $170,000</option>
+                                    <option value="$170001-$180000">$170,001 - $180,000</option>
+                                    <option value="$180001-$190000">$180,001 - $190,000</option>
+                                    <option value="$190001-$200000">$190,001 - $200,000</option>
+                                    <option value="$200001-$210000">$200,001 - $210,000</option>
+                                    <option value="$210001-$220000">$210,001 - $220,000</option>
+                                    <option value="$220001-$230000">$220,001 - $230,000</option>
+                                    <option value="$230001-$240000">$230,001 - $240,000</option>
+                                    <option value="$240001-$250000">$240,001 - $250,000</option>
+                                    <option value="$250001-$260000">$250,001 - $260,000</option>
+                                    <option value="$260001-$270000">$260,001 - $270,000</option>
+                                    <option value="$270001-$280000">$270,001 - $280,000</option>
+                                    <option value="$280001-$290000">$280,001 - $290,000</option>
+                                    <option value="$290001-$300000">$290,001 - $300,000</option>
+                                    <option value="$300001-$310000">$300,001 - $310,000</option>
+                                    <option value="$310001-$320000">$310,001 - $320,000</option>
+                                    <option value="$320001-$330000">$320,001 - $330,000</option>
+                                    <option value="$330001-$340000">$330,001 - $340,000</option>
+                                    <option value="$340001-$350000">$340,001 - $350,000</option>
+                                    <option value="$350001-$360000">$350,001 - $360,000</option>
+                                    <option value="$360001-$370000">$360,001 - $370,000</option>
+                                    <option value="$370001-$380000">$370,001 - $380,000</option>
+                                    <option value="$380001-$390000">$380,001 - $390,000</option>
+                                    <option value="$390001-$400000">$390,001 - $400,000</option>
+                                    <option value="$400001-$410000">$400,001 - $410,000</option>
+                                    <option value="$410001-$420000">$410,001 - $420,000</option>
+                                    <option value="$420001-$430000">$420,001 - $430,000</option>
+                                    <option value="$430001-$440000">$430,001 - $440,000</option>
+                                    <option value="$440001-$450000">$440,001 - $450,000</option>
+                                    <option value="$450001-$460000">$450,001 - $460,000</option>
+                                    <option value="$460001-$470000">$460,001 - $470,000</option>
+                                    <option value="$470001-$480000">$470,001 - $480,000</option>
+                                    <option value="$480001-$490000">$480,001 - $490,000</option>
+                                    <option value="$490001-$500000">$490,001 - $500,000</option>
+                                    <option value="$500001-$510000">$500,001 - $510,000</option>
+                                    <option value="$510001-$520000">$510,001 - $520,000</option>
+                                    <option value="$520001-$530000">$520,001 - $530,000</option>
+                                    <option value="$530001-$540000">$530,001 - $540,000</option>
+                                    <option value="$540001-$550000">$540,001 - $550,000</option>
+                                    <option value="$550001-$560000">$550,001 - $560,000</option>
+                                    <option value="$560001-$570000">$560,001 - $570,000</option>
+                                    <option value="$570001-$580000">$570,001 - $580,000</option>
+                                    <option value="$580001-$590000">$580,001 - $590,000</option>
+                                    <option value="$590001-$600000">$590,001 - $600,000</option>
+                                    <option value="$600001-$610000">$600,001 - $610,000</option>
+                                    <option value="$610001-$620000">$610,001 - $620,000</option>
+                                    <option value="$620001-$630000">$620,001 - $630,000</option>
+                                    <option value="$630001-$640000">$630,001 - $640,000</option>
+                                    <option value="$640001-$650000">$640,001 - $650,000</option>
+                                    <option value="$650001-$660000">$650,001 - $660,000</option>
+                                    <option value="$660001-$670000">$660,001 - $670,000</option>
+                                    <option value="$670001-$680000">$670,001 - $680,000</option>
+                                    <option value="$680001-$690000">$680,001 - $690,000</option>
+                                    <option value="$690001-$700000">$690,001 - $700,000</option>
+                                    <option value="$700001-$710000">$700,001 - $710,000</option>
+                                    <option value="$710001-$720000">$710,001 - $720,000</option>
+                                    <option value="$720001-$730000">$720,001 - $730,000</option>
+                                    <option value="$730001-$740000">$730,001 - $740,000</option>
+                                    <option value="$740001-$750000">$740,001 - $750,000</option>
+                                    <option value="$750001-$760000">$750,001 - $760,000</option>
+                                    <option value="$760001-$770000">$760,001 - $770,000</option>
+                                    <option value="$770001-$780000">$770,001 - $780,000</option>
+                                    <option value="$780001-$790000">$780,001 - $790,000</option>
+                                    <option value="$790001-$800000">$790,001 - $800,000</option>
+                                    <option value="$800001-$810000">$800,001 - $810,000</option>
+                                    <option value="$810001-$820000">$810,001 - $820,000</option>
+                                    <option value="$820001-$830000">$820,001 - $830,000</option>
+                                    <option value="$830001-$840000">$830,001 - $840,000</option>
+                                    <option value="$840001-$850000">$840,001 - $850,000</option>
+                                    <option value="$850001-$860000">$850,001 - $860,000</option>
+                                    <option value="$860001-$870000">$860,001 - $870,000</option>
+                                    <option value="$870001-$880000">$870,001 - $880,000</option>
+                                    <option value="$880001-$890000">$880,001 - $890,000</option>
+                                    <option value="$890001-$900000">$890,001 - $900,000</option>
+                                    <option value="$900001-$910000">$900,001 - $910,000</option>
+                                    <option value="$910001-$920000">$910,001 - $920,000</option>
+                                    <option value="$920001-$930000">$920,001 - $930,000</option>
+                                    <option value="$930001-$940000">$930,001 - $940,000</option>
+                                    <option value="$940001-$950000">$940,001 - $950,000</option>
+                                    <option value="$950001-$960000">$950,001 - $960,000</option>
+                                    <option value="$960001-$970000">$960,001 - $970,000</option>
+                                    <option value="$970001-$980000">$970,001 - $980,000</option>
+                                    <option value="$980001-$990000">$980,001 - $990,000</option>
+                                    <option value="$990001-$100000">$990,001 - $1000,000</option>
+                                    <option value="$1000001-$110000">$1000,001 - $1100,000</option>
+                                </select>
+                                <div class="btn_container">
+                                    <button type="button" id="nextBtn" class="btn1" onclick="nextPrev(1)">Continue</button>
+                                </div>
+                            </div>
+                            <div class = "fcenter hide">
+                                <h4>Desired Line Of Credit Amount</h4>
+                                <select name="desired_loan_amount" id="desired_loan_amount" class="input11">
+                                    <option value="$40000">$40,000</option>
+                                    <option value="$50000">$50,000</option>
+                                    <option value="$60000">$60,000</option>
+                                    <option value="$70000">$70,000</option>
+                                    <option value="$80000">$80,000</option>
+                                    <option value="$90000">$90,000</option>
+                                    <option value="$100000">$100,000</option>
+                                    <option value="$110000">$110,000</option>
+                                    <option value="$120000">$120,000</option>
+                                    <option value="$130000">$130,000</option>
+                                    <option value="$140000">$140,000</option>
+                                    <option value="$150000">$150,000</option>
+                                    <option value="$160000">$160,000</option>
+                                    <option value="$170000">$170,000</option>
+                                    <option value="$180000">$180,000</option>
+                                    <option value="$190000">$190,000</option>
+                                    <option value="$200000">$200,000</option>
+                                    <option value="$210000">$210,000</option>
+                                    <option value="$220000">$220,000</option>
+                                    <option value="$230000">$230,000</option>
+                                    <option value="$240000">$240,000</option>
+                                    <option value="$250000">$250,000</option>
+                                    <option value="$260000">$260,000</option>
+                                    <option value="$270000">$270,000</option>
+                                    <option value="$280000">$280,000</option>
+                                    <option value="$290000">$290,000</option>
+                                    <option value="$300000">$300,000</option>
+                                </select>
+                                <div class="btn_container">
+                                    <button type="button" id="nextBtn" class="btn1" onclick="nextPrev(1)">Continue</button>
+                                </div>
+                            </div>
+                            <div class="fcenter hide">
+                                <h5 class = "textClass">BEST TIME TO CALL</h5>
+                                 <select name="best_time_to_call" id="best_time_to_call" class="input11">
+                                    <option value="9:00-10:00am">9:00-10:00am</option>
+                                    <option value="10:00-11:00am">10:00-11:00am</option>
+                                    <option value="11:00-12:00pm">11:00-12:00pm</option>
+                                    <option value="12:00-1:00pm">12:00-1:00pm</option>
+                                    <option value="1:00-2:00pm">1:00-2:00pm</option>
+                                    <option value="2:00-3:00pm">2:00-3:00pm</option>
+                                    <option value="3:00-4:00pm">3:00-4:00pm</option>
+                                    <option value="4:00-5:00pm">4:00-5:00pm</option>
+                                    <option value="5:00-6:00pm">5:00-6:00pm</option>
+                                    <option value="6:00-7:00pm">6:00-7:00pm</option>
+                                    <option value="7:00-8:00pm">7:00-8:00pm</option>
+                                    <option value="8:00-9:00pm">8:00-9:00pm</option>
+                                 </select>
+                                 <div class="btn_container">
+                                    <button type="button" id="nextBtn" class="btn1" onclick="nextPrev(1)">Continue</button>
+                                </div>
+                            </div>
+                            <div class="hide fcenter">
+                                <h4>Is the property your primary residence?</h4>
+                                <div class="radio_btn">
+                                <label>
+                                    <input type="radio" name="primary_residence" value="Yes" onclick="nextPrev(1)">
+                                    <span>Yes</span> </label>
+                                </div>
+                                <div class="radio_btn">
+                                <label>
+                                    <input type="radio" name="primary_residence" value="No" onclick="nextPrev(1)">
+                                    <span>No</span> </label>
+                                </div>
+                            </div>
+                            <div class="hide fcenter">
+                                <h4>Does the property generate rental income?</h4>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="generate_rental_income" value="Yes" onclick="nextPrev(1)">
+                                        <span>Yes</span> 
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="generate_rental_income" value="No" onclick="nextPrev(1)">
+                                        <span>No</span> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hide fcenter">
+                                <h4>Do you pay condo maintenance fees?</h4>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="condo_maintenance_fees" value="Yes" onclick="nextPrev(1)">
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="condo_maintenance_fees" value="No" onclick="nextPrev(1)">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hide fcenter">
+                                <h4>Do you own multiple properties?</h4>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="multiple_properties" value="Yes" onclick="nextPrev(1)">
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                                <div class="radio_btn">
+                                    <label>
+                                        <input type="radio" name="multiple_properties" value="No" onclick="nextPrev(1)">
+                                        <span>No</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hide fcenter">
+                                <div id="address_tab">
+                                    <h4>Enter Your Street Address and Postal Code</h4>
+                                    <div class="address-form-outer">
+                                        <input type="text" name="address" id="address" value="" class="input12" placeholder="Address">
+                                        <span id="address_error" class="input_error" style="display:none;">Please enter Address</span>
+                                    </div>
+                                    <div class="address-form-outer">
+                                        <input type="text" name="zip" id="zip" value="" class="input12" placeholder="Postal Code">
+                                        <span id="zip_error" class="input_error" style="display:none;">Please enter Postal Code</span>
+                                    </div>
+                                </div>
+                                <div class="btn_container">
+                                    <input type="submit" id="nextBtn" class="btn1" value="Continue" onclick="nextPrev(1)">
+                                </div>
+                            </div>
+                            <div class = "hide fcenter">
+                                <h5 class = "textClass">Contact Information</h5>
+                                <div class = "fullwidth">
+                                    <span>
+                                        <input type="text" name="firstname" id = "firstname" value="" size="40" class="input12" aria-required="true" aria-invalid="false" placeholder="First Name">
+                                    </span>
+                                </div>
+                                <div class="fullwidth">
+                                    <span>
+                                        <input type="text" name="lastname" id = "lastname" value="" size="40" class="input12" aria-required="true" aria-invalid="false" placeholder="Last Name">
+                                    </span>
+                                </div>
+                                <div class="fullwidth">
+                                    <span>
+                                        <input type="email" name="email" id = "email" value="" size="40" class="input12" aria-required="true" aria-invalid="false" placeholder="Email">
+                                    </span>
+                                </div>
+                                <div class="fullwidth">
+                                    <span>
+                                        <input type="text" name="phone" id = "phone" value="" size="40" class="input12" aria-required="true" aria-invalid="false" placeholder="Phone">
+                                    </span>
+                                </div>
+                                <div class = "btn_container">
+                                    <input type="submit" id="nextBtn" class="btn1" value="Submit" onclick="submitForm()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "right_txt">
+            <p>Refinancing Specialists</p>
+            <div class = "specialist_blk fullwidth">
+                <div class="links fullwidth"> 
+                    <h5>Mortgage Loans For Poor Credit</h5>
+                    <ul>
+                        <li><a href="http://getmortgagenow.ca/low-credit-scores/">Low Credit Scores</a></li>
+                        <li><a href="http://getmortgagenow.ca/poor-credit/">Poor Credit</a></li>
+                        <li><a href="http://getmortgagenow.ca/bad-credit-no-credit/">Bad Credit or No Credit</a></li>
+                        <li><a href="http://getmortgagenow.ca/self-employed/">Self Employed</a></li>
+                        <li><a href="http://getmortgagenow.ca/no-income-verification/">No Income Verification</a></li>
+                        <li><a href="http://getmortgagenow.ca/subprime-lender/">Subprime Lender</a></li>
+                    </ul> 
+                </div>
+                <div class="links fullwidth"> 
+                    <h5>Home Loans For Bad Credit</h5>
+                    <ul>
+                        <li><a href="http://getmortgagenow.ca/after-bankruptcy/">After Bankruptcy</a></li>
+                        <li><a href="http://getmortgagenow.ca/stop-foreclosure/">Stop Foreclosure</a></li>
+                        <li><a href="http://getmortgagenow.ca/power-of-sale/">Power of Sale</a></li>
+                        <li><a href="http://getmortgagenow.ca/lose-my-house/">Lose my House</a></li>
+                        <li><a href="http://getmortgagenow.ca/home-equity-line-credit/">Home Equity Line of Credit</a></li>
+                    </ul>
+                </div>
+                <div class="links fullwidth"> 
+                    <h5>Private Mortgage Refinancing</h5>
+                    <ul>
+                        <li><a href="http://getmortgagenow.ca/first-mortgages/">First Mortgages</a></li>
+                        <li><a href="http://getmortgagenow.ca/second-mortgages/">Second Mortgages</a></li>
+                        <li><a href="http://getmortgagenow.ca/third-mortgages/">Third Mortgages</a></li>
+                        <li><a href="http://getmortgagenow.ca/interest-only-mortgages/">Interest Only Mortgages</a></li>
+                        <li><a href="http://getmortgagenow.ca/second-home-mortgage/">Second Home Mortgage</a></li>
+                        <li><a href="http://getmortgagenow.ca/bridge-financing/">Bridge Financing</a></li>
+                    </ul> 
+                </div>
+                <div class="links fullwidth"> 
+                    <h5>Equity Based Debt Consolidation</h5>
+                    <ul>
+                        <li><a href="http://getmortgagenow.ca/lower-interest-payment/">Lower Your Interest Payment</a></li>
+                        <li><a href="http://getmortgagenow.ca/home-refinance-renewals/">Home Refinance - Renewals</a></li>
+                        <li><a href="http://getmortgagenow.ca/bank-turndowns/">Bank Turndowns</a></li>
+                        <li><a href="http://getmortgagenow.ca/cash-out-refinance/">Cash Out Refinance</a></li>
+                        <li><a href="http://getmortgagenow.ca/equity-financing/">Equity Financing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href = "#" class = "policy">SecureRight Policy</a>
+        </div>
+    </div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+    <script type="text/javascript" src="javascripts/custom.js"></script>
   </body>
 </html>

@@ -10,8 +10,8 @@ function sendEmail(htmlData, email) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "fgrgec8@gmail.com",
-      pass: "fgrgecgmail111"
+      user: "smartrefinance01@gmail.com",
+      pass: "refinance01"
     }
   });
   transporter.verify(function(error, success) {
@@ -24,7 +24,7 @@ function sendEmail(htmlData, email) {
   var mainOptions = {
     from: email,
     replyTo: email,
-    to: "mum19928@outlook.com",
+    to: "warrior2110@outlook.com",
     subject: "TEST",
     text: `We're hoping meet you soon...`,
     html: htmlData
